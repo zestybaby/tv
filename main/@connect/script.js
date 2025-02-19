@@ -35949,101 +35949,100 @@ const Lae = Ur(Sae, [
     };
 Hs("");
 const wae = {
-        LABEL: "BRANCH",
-        REFRESH_REQUIRED: "Refresh Required",
-        PREFERRED: "PREFERRED BRANCH",
-        SELECT: "Select a Branch",
-        WAITING: "Waiting for Room"
+        LABEL: "分支",
+        REFRESH_REQUIRED: "需要刷新页面",
+        PREFERRED: "首选分支",
+        SELECT: "选择一个分支",
+        WAITING: "等待房间"
     },
     Oae = {
-        ACCEPT_ALL: "Got it!",
+        ACCEPT_ALL: "知道了！",
         CONSENT_MODAL: {
-            ARIA: "Cookie consent form"
+            ARIA: "Cookie同意表单"
         },
-        DESCRIPTION: "We use cookies to improve your game experience and analyze website traffic. Find out more in our [pp]Privacy Policy[/pp].",
-        REJECT_ALL: "Opt out"
+        DESCRIPTION: "我们使用Cookies来改善你的游戏体验并分析网站流量。了解更多关于我们的[pp]隐私政策[/pp]。",
+        REJECT_ALL: "退出"
     },
     Iae = {
-        UNSUPPORTED_BROWSER: "This game is not supported on this browser. View '?' or HELP to see a list of compatible browsers.",
-        ROOM_IS_FULL: "The game is full",
-        ROOM_NOT_FOUND: "Room not found",
-        AUDIENCE_IS_FULL: "The audience is full",
-        UNABLE_TO_CONNECT: "Unable to connect to the Jackbox Games server. This is commonly caused by adblockers or privacy extensions.",
-        UNABLE_TO_PRELOAD: "Unable to preload this game bundle",
-        KICKED: "You cannot join because you have been kicked by a moderator",
-        REQUIRES_TWITCH_LOGIN: "Game requires Twitch login",
-        ROOM_IS_LOCKED: "Game is locked",
-        INCORRECT_PASSWORD: "Incorrect password",
-        GENERIC: "Error joining this game",
-        FILTER_NAME: "This game has profanity filters enabled. Please pick a different name."
+        UNSUPPORTED_BROWSER: "此游戏不支持此浏览器。查看'？'或帮助以查看兼容浏览器的列表。",
+        ROOM_IS_FULL: "游戏已满",
+        ROOM_NOT_FOUND: "未找到房间",
+        AUDIENCE_IS_FULL: "观众已满",
+        UNABLE_TO_CONNECT: "无法连接到Jackbox Games服务器。这通常是由广告拦截器或隐私扩展引起的。",
+        UNABLE_TO_PRELOAD: "无法预载此游戏包",
+        KICKED: "你无法加入，因为你已被房管踢出。",
+        REQUIRES_TWITCH_LOGIN: "游戏需要Twitch登录",
+        ROOM_IS_LOCKED: "房间已锁定",
+        INCORRECT_PASSWORD: "密码错误",
+        GENERIC: "加入此游戏时出错",
+        FILTER_NAME: "此游戏启用了不当用语过滤器。请选择不同的名称。"
     },
     Nae = {
-        NAME: "NAME",
-        NAME_PLACEHOLDER: "ENTER YOUR NAME",
-        PASSWORD_PLACEHOLDER: "ENTER 5-DIGIT PASSWORD",
-        PASSWORD_REQUIRED_TITLE: "Password required",
-        PASSWORD_REQUIRED_BODY: "Please enter the password or join as an audience member",
-        PASSWORD_JOIN_AS_PLAYER: "Join as Player",
-        PASSWORD_JOIN_AS_AUDIENCE: "Join Audience",
-        ROOM_CODE: "ROOM CODE",
-        ROOM_CODE_PLACEHOLDER: "ENTER 4-LETTER CODE"
+        NAME: "名称",
+        NAME_PLACEHOLDER: "输入你的名称",
+        PASSWORD_PLACEHOLDER: "输入5位密码",
+        PASSWORD_REQUIRED_TITLE: "需要输入密码",
+        PASSWORD_REQUIRED_BODY: "请输入密码或加入观众",
+        PASSWORD_JOIN_AS_PLAYER: "加入玩家",
+        PASSWORD_JOIN_AS_AUDIENCE: "加入观众",
+        ROOM_CODE: "房间代码",
+        ROOM_CODE_PLACEHOLDER: "输入4位代码"
     },
-    Pae = "Link to Jackbox Games Homepage",
+    Pae = "Jackbox Games主页链接",
     Uae = {
-        APPEARANCE: "APPEARANCE",
-        DARK: "dark",
-        HELP: "HELP",
+        APPEARANCE: "外观",
+        DARK: "深色",
+        HELP: "帮助",
         TWITCH: "TWITCH",
-        LIGHT: "light",
-        LOGOUT: "LOGOUT",
-        MERCH: "MERCH",
-        PAST_GAMES: "PAST GAMES",
-        MAILING_LIST: "MAILING LIST",
-        MODERATOR: "MODERATOR"
+        LIGHT: "浅色",
+        LOGOUT: "退出",
+        MERCH: "周边",
+        PAST_GAMES: "过往游戏",
+        MAILING_LIST: "邮件列表",
+        MODERATOR: "房管"
     },
     Dae = {
         CALL_TO_ACTION: {
-            SHOP: "VIEW GAME & SHOP",
-            VIEW: "VIEW THIS GAME"
+            SHOP: "查看游戏 & 周边",
+            VIEW: "查看此游戏"
         },
-        NEW: "NEW",
-        PLAYED_ON: "PLAYED ON",
+        NEW: "新",
+        PLAYED_ON: "游玩于",
         REMOVE: {
-            CONFIRM: "Are you sure?",
-            DESCRIPTION: `This will permanently remove this game
-from your past games list.`,
-            MANAGE: "Remove Game?",
-            TITLE: "Are You Sure?"
+            CONFIRM: "你确定吗？",
+            DESCRIPTION: `这将永久从你的过往游戏列表中删除此游戏。`,
+            MANAGE: "删除游戏？",
+            TITLE: "你确定吗？"
         }
     },
     Bae = {
-        EMPTY: "No Past Games Yet",
-        MANAGE: "MANAGE",
-        TITLE: "YOUR PAST GAMES"
+        EMPTY: "没有过往游戏",
+        MANAGE: "管理",
+        TITLE: "你的过往游戏"
     },
     Mae = {
-        TITLE: "RECENT GAMES",
+        TITLE: "最近游戏",
         VIEW_ALL: {
-            BUTTON: "VIEW ALL",
-            LINK: "VIEW ALL PAST GAMES"
+            BUTTON: "查看所有",
+            LINK: "查看所有过往游戏"
         }
     },
     $ae = {
-        GAME_FULL: "Game is full",
-        GAME_STARTED: "Game has started",
-        ROOM_NOT_FOUND: "Room not found"
+        GAME_FULL: "游戏已满",
+        GAME_STARTED: "游戏已开始",
+        ROOM_NOT_FOUND: "房间未找到"
     },
     Kae = {
-        GAME_FULL: "GAME IS FULL",
-        GAME_STARTED: "GAME HAS STARTED",
-        JOIN_AUDIENCE: "JOIN AUDIENCE",
-        RECONNECT: "RECONNECT",
-        TWITCH_LOGIN: "LOGIN WITH TWITCH"
+        GAME_FULL: "游戏已满",
+        GAME_STARTED: "游戏已开始",
+        JOIN_AUDIENCE: "加入观众",
+        RECONNECT: "重新连接",
+        TWITCH_LOGIN: "使用Twitch登录"
     },
     kae = {
-        CAMERA: "[b]HEADS UP:[/b] We’re not detecting a camera, but you can still play the game without a photo. If this seems wrong, try joining with a different browser.",
-        STYLE: "[b]HEADS UP:[/b] Your browser seems a bit outdated, and will have some issues displaying this game.",
-        TOS: "By clicking {submit}, you agree to our [tos]Terms of Service[/tos]"
+        CAMERA: "[b]注意:[/b] 我们没有检测到摄像头，但你可以不使用照片玩这个游戏。如果觉得有问题，请使用不同的浏览器加入游戏。",
+        STYLE: "[b]注意:[/b] 你的浏览器似乎有点过时，可能会出现一些问题。",
+        TOS: "点击{submit}，即表示你同意我们的[tos]服务条款[/tos]"
     },
     Gae = {
         BRANCH: wae,
