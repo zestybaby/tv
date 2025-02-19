@@ -2034,7 +2034,7 @@ var Gc = {
         var Ne = new mt,
             Pt = new mt,
             ci = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
-            Ri = /[A-Z]/g;
+            Ri = /[A-Z\u2E80-\u9FFF]/g;
 
         function j(s) {
             return s === "true" ? !0 : s === "false" ? !1 : s === "null" ? null : s === +s + "" ? +s : ci.test(s) ? JSON.parse(s) : s
@@ -5545,7 +5545,7 @@ function Ep() {
                 }, {})
             },
             mt = function(u, w) {
-                return u.replace(/@ui\.[a-zA-Z-_$0-9]*/g, function(D) {
+                return u.replace(/@ui\.[a-zA-Z\u2E80-\u9FFF-_$0-9]*/g, function(D) {
                     return w[D.slice(4)]
                 })
             },
@@ -10957,7 +10957,7 @@ const qn = class qn {
         return this.htmlEscape(i).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z\u2E80-\u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
         return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -14950,9 +14950,9 @@ var bc = {
                 parse: O
             },
             $ = /[\n\r\t]/g,
-            ee = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+            ee = /^[A-Z\u2E80-\u9FFFa-z][A-Z\u2E80-\u9FFFa-z0-9+-.]*:\/\//,
             y = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
-            K = /^[a-zA-Z]:/,
+            K = /^[a-zA-Z\u2E80-\u9FFF]:/,
             z = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/;
 
         function ie(j) {
@@ -21639,8 +21639,8 @@ var Gd = {
                 }, ct), ve([document.documentElement, document.body], o.shown), S.heightAuto && S.backdrop && !S.toast && ve([document.documentElement, document.body], o["height-auto"])
             };
         var Bi = {
-            email: (h, g) => /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9-]{2,24}$/.test(h) ? Promise.resolve() : Promise.resolve(g || "Invalid email address"),
-            url: (h, g) => /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)$/.test(h) ? Promise.resolve() : Promise.resolve(g || "Invalid URL")
+            email: (h, g) => /^[a-zA-Z\u2E80-\u9FFF0-9.+_-]+@[a-zA-Z\u2E80-\u9FFF0-9.-]+\.[a-zA-Z\u2E80-\u9FFF0-9-]{2,24}$/.test(h) ? Promise.resolve() : Promise.resolve(g || "Invalid email address"),
+            url: (h, g) => /^https?:\/\/(www\.)?[-a-zA-Z\u2E80-\u9FFF0-9@:%._+~#=]{1,256}\.[a-z]{2,63}\b([-a-zA-Z\u2E80-\u9FFF0-9@:%_+.~#?&/=]*)$/.test(h) ? Promise.resolve() : Promise.resolve(g || "Invalid URL")
         };
 
         function Pr(h) {
@@ -23695,9 +23695,9 @@ const hw = `<div id="controller" class="state-controller controller-content">
             })
         },
         activateContentIdFromInput(t) {
-            (t.getSanitizedValue().replace(/[^A-Za-z]/gi, "").toUpperCase() || "").length < 7 || (this.triggerMethod("client:message", {
+            (t.getSanitizedValue().replace(/[^A-Z\u2E80-\u9FFFa-z]/gi, "").toUpperCase() || "").length < 7 || (this.triggerMethod("client:message", {
                 activateContentId: !0,
-                contentId: t.getSanitizedValue().replace(/[^A-Za-z]/gi, "").toUpperCase()
+                contentId: t.getSanitizedValue().replace(/[^A-Z\u2E80-\u9FFFa-z]/gi, "").toUpperCase()
             }), It.close())
         },
         onChildviewChildviewCharacterClick(t) {
@@ -27257,8 +27257,8 @@ const hT = `<div id="content-region" class="content"></div>
     t.mask = {
         definitions: {
             9: "[0-9]",
-            a: "[A-Za-z]",
-            "*": "[A-Za-z0-9]"
+            a: "[A-Z\u2E80-\u9FFFa-z]",
+            "*": "[A-Z\u2E80-\u9FFFa-z0-9]"
         },
         autoclear: !0,
         dataName: "rawMaskFn",
@@ -27543,7 +27543,7 @@ var Mr = ff,
                 return new Mr.Token(Mr.Token.Type.startTag, i, r, e[0])
             }
             return new Mr.Token(Mr.Token.Type.endTag, e[1].substr(1, e[1].length - 1))
-        }, t.nameChars = "[a-zA-Z0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z0-9\\.\\-_:;#/\\s]", t
+        }, t.nameChars = "[a-zA-Z\u2E80-\u9FFF0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z\u2E80-\u9FFF0-9\\.\\-_:;#/\\s]", t
     }();
 qo.Tokenizer = gT;
 (function(t) {

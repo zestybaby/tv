@@ -4013,7 +4013,7 @@ const bt = class bt {
         return this.htmlEscape(r).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z\u2E80-\u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
         return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -5411,9 +5411,9 @@ var hs = {
                 parse: R
             },
             A = /[\n\r\t]/g,
-            U = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+            U = /^[A-Z\u2E80-\u9FFFa-z][A-Z\u2E80-\u9FFFa-z0-9+-.]*:\/\//,
             B = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
-            Y = /^[a-zA-Z]:/,
+            Y = /^[a-zA-Z\u2E80-\u9FFF]:/,
             W = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/;
 
         function Ee(_) {

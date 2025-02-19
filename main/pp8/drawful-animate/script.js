@@ -87,17 +87,17 @@ var lae = cP((zae, A1) => {
             pattern: /[0-9]/
         },
         X: {
-            pattern: /[0-9a-zA-Z]/
+            pattern: /[0-9a-zA-Z\u2E80-\u9FFF]/
         },
         S: {
-            pattern: /[a-zA-Z]/
+            pattern: /[a-zA-Z\u2E80-\u9FFF]/
         },
         A: {
-            pattern: /[a-zA-Z]/,
+            pattern: /[a-zA-Z\u2E80-\u9FFF]/,
             uppercase: !0
         },
         a: {
-            pattern: /[a-zA-Z]/,
+            pattern: /[a-zA-Z\u2E80-\u9FFF]/,
             lowercase: !0
         },
         "!": {
@@ -304,7 +304,7 @@ var lae = cP((zae, A1) => {
         },
         EP = /-(\w)/g,
         Un = au(e => e.replace(EP, (t, r) => r ? r.toUpperCase() : "")),
-        bP = /\B([A-Z])/g,
+        bP = /\B([A-Z\u2E80-\u9FFF])/g,
         Ns = au(e => e.replace(bP, "-$1").toLowerCase()),
         cu = au(e => e.charAt(0).toUpperCase() + e.slice(1)),
         fd = au(e => e ? `on${cu(e)}` : ""),
@@ -7277,7 +7277,7 @@ var lae = cP((zae, A1) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return t.replace(/[^A-Z\u2E80-\u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static sanitizeInput(t) {
             return t = t.replace("…", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -11777,7 +11777,7 @@ ${r}`
                     stringify: m,
                     parse: _
                 },
-                I = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+                I = /^[A-Z\u2E80-\u9FFFa-z][A-Z\u2E80-\u9FFFa-z0-9+-.]*:\/\//,
                 R = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
                 B = "[\\x09\\x0A\\x0B\\x0C\\x0D\\x20\\xA0\\u1680\\u180E\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200A\\u202F\\u205F\\u3000\\u2028\\u2029\\uFEFF]",
                 $ = new RegExp("^" + B + "+");
@@ -14297,7 +14297,7 @@ ${r.message}`,
                 nI = "\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf",
                 iI = "\\u2000-\\u206f",
                 sI = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",
-                wm = "A-Z\\xc0-\\xd6\\xd8-\\xde",
+                wm = "A-Z\u2E80-\u9FFF\\xc0-\\xd6\\xd8-\\xde",
                 Im = "\\ufe0e\\ufe0f",
                 Cm = rI + nI + iI + sI,
                 Zu = "['’]",
@@ -14322,7 +14322,7 @@ ${r.message}`,
                 Mm = cI + "?",
                 Um = "[" + Im + "]?",
                 uI = "(?:" + Pm + "(?:" + [Rm, tf, rf].join("|") + ")" + Um + Mm + ")*",
-                fI = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])",
+                fI = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z\u2E80-\u9FFF_])",
                 dI = "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])",
                 Bm = Um + Mm + uI,
                 hI = "(?:" + [aI, tf, rf].join("|") + ")" + Bm,
@@ -14332,7 +14332,7 @@ ${r.message}`,
                 nf = RegExp(ef + "(?=" + ef + ")|" + pI + Bm, "g"),
                 _I = RegExp([Ls + "?" + Nm + "+" + xm + "(?=" + [$m, Ls, "$"].join("|") + ")", lI + "+" + Dm + "(?=" + [$m, Ls + Lm, "$"].join("|") + ")", Ls + "?" + Lm + "+" + xm, Ls + "+" + Dm, dI, fI, Am, hI].join("|"), "g"),
                 vI = RegExp("[" + Pm + lc + Tm + Im + "]"),
-                yI = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
+                yI = /[a-z][A-Z\u2E80-\u9FFF]|[A-Z\u2E80-\u9FFF]{2}[a-z]|[0-9][a-zA-Z\u2E80-\u9FFF]|[a-zA-Z\u2E80-\u9FFF][0-9]|[^a-zA-Z\u2E80-\u9FFF0-9 ]/,
                 EI = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"],
                 bI = -1,
                 Ct = {};
@@ -20281,7 +20281,7 @@ function print() { __p += __j.call(arguments, '') }
                     return new Si.Token(Si.Token.Type.startTag, r, n, t[0])
                 }
                 return new Si.Token(Si.Token.Type.endTag, t[1].substr(1, t[1].length - 1))
-            }, e.nameChars = "[a-zA-Z0-9\\.\\-_:;/]", e.valueChars = "[a-zA-Z0-9\\.\\-_:;#/\\s]", e
+            }, e.nameChars = "[a-zA-Z\u2E80-\u9FFF0-9\\.\\-_:;/]", e.valueChars = "[a-zA-Z\u2E80-\u9FFF0-9\\.\\-_:;#/\\s]", e
         }();
     Fu.Tokenizer = aY;
     (function(e) {
@@ -28450,7 +28450,7 @@ ${t}`
                             activateContentId: !0,
                             contentId: e.contentId
                         }).catch(this.$handleEcastError), e.action === "input")) {
-                        const r = ((t = e.answer) == null ? void 0 : t.replace(/[^A-Za-z]/gi, "").toUpperCase()) || "";
+                        const r = ((t = e.answer) == null ? void 0 : t.replace(/[^A-Z\u2E80-\u9FFFa-z]/gi, "").toUpperCase()) || "";
                         if (r.length < 7) return;
                         this.$ecast.updateObject(this.player.responseKey, {
                             activateContentId: !0,

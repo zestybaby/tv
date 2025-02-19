@@ -83,17 +83,17 @@ var YA = {
         pattern: /[0-9]/
     },
     X: {
-        pattern: /[0-9a-zA-Z]/
+        pattern: /[0-9a-zA-Z\u2E80-\u9FFF]/
     },
     S: {
-        pattern: /[a-zA-Z]/
+        pattern: /[a-zA-Z\u2E80-\u9FFF]/
     },
     A: {
-        pattern: /[a-zA-Z]/,
+        pattern: /[a-zA-Z\u2E80-\u9FFF]/,
         uppercase: !0
     },
     a: {
-        pattern: /[a-zA-Z]/,
+        pattern: /[a-zA-Z\u2E80-\u9FFF]/,
         lowercase: !0
     },
     "!": {
@@ -301,7 +301,7 @@ const Dt = {},
     },
     fB = /-(\w)/g,
     Xn = Uf(t => t.replace(fB, (e, r) => r ? r.toUpperCase() : "")),
-    cB = /\B([A-Z])/g,
+    cB = /\B([A-Z\u2E80-\u9FFF])/g,
     Gs = Uf(t => t.replace(cB, "-$1").toLowerCase()),
     wf = Uf(t => t.charAt(0).toUpperCase() + t.slice(1)),
     Mp = Uf(t => t ? `on${wf(t)}` : ""),
@@ -8025,7 +8025,7 @@ const La = class La {
         return this.htmlEscape(r).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z\u2E80-\u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
         return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -12308,9 +12308,9 @@ var NT = {
                 parse: T
             },
             I = /[\n\r\t]/g,
-            U = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+            U = /^[A-Z\u2E80-\u9FFFa-z][A-Z\u2E80-\u9FFFa-z0-9+-.]*:\/\//,
             $ = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
-            O = /^[a-zA-Z]:/,
+            O = /^[a-zA-Z\u2E80-\u9FFF]:/,
             M = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/;
 
         function H(L) {
@@ -20008,7 +20008,7 @@ class Qv {
         return e.replace("…", "...").replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u2019]/gi, "")
     }
     static username(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z\u2E80-\u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static emoji(e) {
         return e.replace(/(\u00A9|\u00AE|[\u2000-\u2017]|[\u2020-\u3300]|\uD83C[\uD000-\uDFFF]|\uD83D[\uD000-\uDFFF]|\uD83E[\uD000-\uDFFF])/, "")
@@ -21243,7 +21243,7 @@ gf.exports;
             YL = "\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf",
             zL = "\\u2000-\\u206f",
             JL = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",
-            c_ = "A-Z\\xc0-\\xd6\\xd8-\\xde",
+            c_ = "A-Z\u2E80-\u9FFF\\xc0-\\xd6\\xd8-\\xde",
             p_ = "\\ufe0e\\ufe0f",
             h_ = qL + YL + zL + JL,
             Oc = "['’]",
@@ -21268,7 +21268,7 @@ gf.exports;
             y_ = eC + "?",
             v_ = "[" + p_ + "]?",
             rC = "(?:" + T_ + "(?:" + [m_, Nc, Uc].join("|") + ")" + v_ + y_ + ")*",
-            nC = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])",
+            nC = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z\u2E80-\u9FFF_])",
             iC = "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])",
             b_ = v_ + y_ + rC,
             sC = "(?:" + [ZL, Nc, Uc].join("|") + ")" + b_,
@@ -21278,7 +21278,7 @@ gf.exports;
             wc = RegExp(Ic + "(?=" + Ic + ")|" + aC + b_, "g"),
             lC = RegExp([ta + "?" + d_ + "+" + A_ + "(?=" + [E_, ta, "$"].join("|") + ")", tC + "+" + x_ + "(?=" + [E_, ta + R_, "$"].join("|") + ")", ta + "?" + R_ + "+" + A_, ta + "+" + x_, iC, nC, __, sC].join("|"), "g"),
             fC = RegExp("[" + T_ + Au + u_ + p_ + "]"),
-            cC = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
+            cC = /[a-z][A-Z\u2E80-\u9FFF]|[A-Z\u2E80-\u9FFF]{2}[a-z]|[0-9][a-zA-Z\u2E80-\u9FFF]|[a-zA-Z\u2E80-\u9FFF][0-9]|[^a-zA-Z\u2E80-\u9FFF0-9 ]/,
             pC = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"],
             hC = -1,
             Pt = {};
@@ -27918,7 +27918,7 @@ var Ui = M1,
                 return new Ui.Token(Ui.Token.Type.startTag, r, n, e[0])
             }
             return new Ui.Token(Ui.Token.Type.endTag, e[1].substr(1, e[1].length - 1))
-        }, t.nameChars = "[a-zA-Z0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z0-9\\.\\-_:;#/\\s]", t
+        }, t.nameChars = "[a-zA-Z\u2E80-\u9FFF0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z\u2E80-\u9FFF0-9\\.\\-_:;#/\\s]", t
     }();
 dc.Tokenizer = Qz;
 (function(t) {
@@ -32701,7 +32701,7 @@ function H0(t, e, r) {
     };
     return r != null && (n.source = r), n
 }
-const roe = /\{([0-9a-zA-Z]+)\}/g;
+const roe = /\{([0-9a-zA-Z\u2E80-\u9FFF]+)\}/g;
 
 function noe(t, ...e) {
     return e.length === 1 && ioe(e[0]) && (e = e[0]), (!e || !e.hasOwnProperty) && (e = {}), t.replace(roe, (r, n) => e.hasOwnProperty(n) ? e[n] : "")
@@ -36541,7 +36541,7 @@ const nle = t => {
                 })
             },
             onLoadId() {
-                const t = this.id.replace(/[^A-Za-z]/gi, "").toUpperCase();
+                const t = this.id.replace(/[^A-Z\u2E80-\u9FFFa-z]/gi, "").toUpperCase();
                 t.length === 7 && this.$emit("resolve", {
                     action: "ugc-load",
                     contentId: t

@@ -74,7 +74,7 @@ const Wt = {},
     },
     GB = /-(\w)/g,
     oi = Pc(t => t.replace(GB, (e, r) => r ? r.toUpperCase() : "")),
-    VB = /\B([A-Z])/g,
+    VB = /\B([A-Z\u2E80-\u9FFF])/g,
     ca = Pc(t => t.replace(VB, "-$1").toLowerCase()),
     Uc = Pc(t => t.charAt(0).toUpperCase() + t.slice(1)),
     kd = Pc(t => t ? `on${Uc(t)}` : ""),
@@ -3860,7 +3860,7 @@ function uE(t, e, r) {
     };
     return r != null && (n.source = r), n
 }
-const RK = /\{([0-9a-zA-Z]+)\}/g;
+const RK = /\{([0-9a-zA-Z\u2E80-\u9FFF]+)\}/g;
 
 function SK(t, ...e) {
     return e.length === 1 && yK(e[0]) && (e = e[0]), (!e || !e.hasOwnProperty) && (e = {}), t.replace(RK, (r, n) => e.hasOwnProperty(n) ? e[n] : "")
@@ -12458,7 +12458,7 @@ class nA extends tA {
         this.initialized && (r === "true" && n === null && (n = !1), this.updateSwiperOnPropChange(e, n))
     }
     static get observedAttributes() {
-        return Zc.filter(r => r.includes("_")).map(r => r.replace(/[A-Z]/g, n => `-${n}`).replace("_", "").toLowerCase())
+        return Zc.filter(r => r.includes("_")).map(r => r.replace(/[A-Z\u2E80-\u9FFF]/g, n => `-${n}`).replace("_", "").toLowerCase())
     }
 }
 Zc.forEach(t => {
@@ -16526,7 +16526,7 @@ const Za = class Za {
         return this.htmlEscape(r).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z\u2E80-\u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
         return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -20515,9 +20515,9 @@ var Kx = {
                 parse: m
             },
             T = /[\n\r\t]/g,
-            b = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+            b = /^[A-Z\u2E80-\u9FFFa-z][A-Z\u2E80-\u9FFFa-z0-9+-.]*:\/\//,
             S = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
-            v = /^[a-zA-Z]:/,
+            v = /^[a-zA-Z\u2E80-\u9FFF]:/,
             R = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/;
 
         function x(k) {
@@ -24396,7 +24396,7 @@ class UE {
         return e.replace("…", "...").replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u2019]/gi, "")
     }
     static username(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z\u2E80-\u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static emoji(e) {
         return e.replace(/(\u00A9|\u00AE|[\u2000-\u2017]|[\u2020-\u3300]|\uD83C[\uD000-\uDFFF]|\uD83D[\uD000-\uDFFF]|\uD83E[\uD000-\uDFFF])/, "")
@@ -25725,7 +25725,7 @@ Tc.exports;
             Pw = "\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf",
             Uw = "\\u2000-\\u206f",
             Dw = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",
-            Dg = "A-Z\\xc0-\\xd6\\xd8-\\xde",
+            Dg = "A-Z\u2E80-\u9FFF\\xc0-\\xd6\\xd8-\\xde",
             Bg = "\\ufe0e\\ufe0f",
             Mg = Nw + Pw + Uw + Dw,
             Op = "['’]",
@@ -25750,7 +25750,7 @@ Tc.exports;
             jg = $w + "?",
             zg = "[" + Bg + "]?",
             kw = "(?:" + Fg + "(?:" + [Vg, Np, Pp].join("|") + ")" + zg + jg + ")*",
-            Gw = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])",
+            Gw = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z\u2E80-\u9FFF_])",
             Vw = "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])",
             qg = zg + jg + kw,
             Fw = "(?:" + [Mw, Np, Pp].join("|") + ")" + qg,
@@ -25760,7 +25760,7 @@ Tc.exports;
             Up = RegExp(Ip + "(?=" + Ip + ")|" + Hw + qg, "g"),
             jw = RegExp([Ra + "?" + kg + "+" + Wg + "(?=" + [$g, Ra, "$"].join("|") + ")", Kw + "+" + Xg + "(?=" + [$g, Ra + Hg, "$"].join("|") + ")", Ra + "?" + Hg + "+" + Wg, Ra + "+" + Xg, Vw, Gw, Kg, Fw].join("|"), "g"),
             zw = RegExp("[" + Fg + cu + Ng + Bg + "]"),
-            qw = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
+            qw = /[a-z][A-Z\u2E80-\u9FFF]|[A-Z\u2E80-\u9FFF]{2}[a-z]|[0-9][a-zA-Z\u2E80-\u9FFF]|[a-zA-Z\u2E80-\u9FFF][0-9]|[^a-zA-Z\u2E80-\u9FFF0-9 ]/,
             Yw = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"],
             Jw = -1,
             Ft = {};
@@ -31222,7 +31222,7 @@ var Yi = rg,
                 return new Yi.Token(Yi.Token.Type.startTag, r, n, e[0])
             }
             return new Yi.Token(Yi.Token.Type.endTag, e[1].substr(1, e[1].length - 1))
-        }, t.nameChars = "[a-zA-Z0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z0-9\\.\\-_:;#/\\s]", t
+        }, t.nameChars = "[a-zA-Z\u2E80-\u9FFF0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z\u2E80-\u9FFF0-9\\.\\-_:;#/\\s]", t
     }();
 bp.Tokenizer = ete;
 (function(t) {
