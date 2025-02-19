@@ -2096,7 +2096,7 @@ function cc() {
             var ae = new Te,
                 ke = new Te,
                 je = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
-                ze = /[A-Z]/g;
+                ze = /[A-Z/u2E80-/u9FFF]/g;
 
             function ft(s) {
                 return s === "true" ? !0 : s === "false" ? !1 : s === "null" ? null : s === +s + "" ? +s : je.test(s) ? JSON.parse(s) : s
@@ -5606,7 +5606,7 @@ function Td() {
                 }, {})
             },
             ht = function(u, w) {
-                return u.replace(/@ui\.[a-zA-Z-_$0-9]*/g, function(K) {
+                return u.replace(/@ui\.[a-zA-Z/u2E80-/u9FFF-_$0-9]*/g, function(K) {
                     return w[K.slice(4)]
                 })
             },
@@ -11018,7 +11018,7 @@ const Gn = class Gn {
         return this.htmlEscape(i).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z/u2E80-/u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
         return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -14889,9 +14889,9 @@ var Hf = {
                 parse: O
             },
             G = /[\n\r\t]/g,
-            Z = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+            Z = /^[A-Z/u2E80-/u9FFFa-z][A-Z/u2E80-/u9FFFa-z0-9+-.]*:\/\//,
             x = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
-            V = /^[a-zA-Z]:/,
+            V = /^[a-zA-Z/u2E80-/u9FFF]:/,
             z = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/;
 
         function ne(q) {
@@ -25247,8 +25247,8 @@ var nd = {
                 }, La), ae([document.documentElement, document.body], o.shown), R.heightAuto && R.backdrop && !R.toast && ae([document.documentElement, document.body], o["height-auto"])
             };
         var ve = {
-            email: (c, p) => /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9-]{2,24}$/.test(c) ? Promise.resolve() : Promise.resolve(p || "Invalid email address"),
-            url: (c, p) => /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)$/.test(c) ? Promise.resolve() : Promise.resolve(p || "Invalid URL")
+            email: (c, p) => /^[a-zA-Z/u2E80-/u9FFF0-9.+_-]+@[a-zA-Z/u2E80-/u9FFF0-9.-]+\.[a-zA-Z/u2E80-/u9FFF0-9-]{2,24}$/.test(c) ? Promise.resolve() : Promise.resolve(p || "Invalid email address"),
+            url: (c, p) => /^https?:\/\/(www\.)?[-a-zA-Z/u2E80-/u9FFF0-9@:%._+~#=]{1,256}\.[a-z]{2,63}\b([-a-zA-Z/u2E80-/u9FFF0-9@:%_+.~#?&/=]*)$/.test(c) ? Promise.resolve() : Promise.resolve(p || "Invalid URL")
         };
 
         function we(c) {
@@ -27304,9 +27304,9 @@ const zC = `<div id="controller" class="state-controller controller-content">
             })
         },
         activateContentIdFromInput(t) {
-            (t.getSanitizedValue().replace(/[^A-Za-z]/gi, "").toUpperCase() || "").length < 7 || (this.triggerMethod("client:message", {
+            (t.getSanitizedValue().replace(/[^A-Z/u2E80-/u9FFFa-z]/gi, "").toUpperCase() || "").length < 7 || (this.triggerMethod("client:message", {
                 activateContentId: !0,
-                contentId: t.getSanitizedValue().replace(/[^A-Za-z]/gi, "").toUpperCase()
+                contentId: t.getSanitizedValue().replace(/[^A-Z/u2E80-/u9FFFa-z]/gi, "").toUpperCase()
             }), Kt.close())
         },
         onChildviewChildviewCharacterClick(t) {
@@ -30867,8 +30867,8 @@ const qR = `<div id="content-region" class="content"></div>
     t.mask = {
         definitions: {
             9: "[0-9]",
-            a: "[A-Za-z]",
-            "*": "[A-Za-z0-9]"
+            a: "[A-Z/u2E80-/u9FFFa-z]",
+            "*": "[A-Z/u2E80-/u9FFFa-z0-9]"
         },
         autoclear: !0,
         dataName: "rawMaskFn",

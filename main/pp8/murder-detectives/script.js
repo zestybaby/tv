@@ -74,7 +74,7 @@ const $t = {},
     },
     yB = /-(\w)/g,
     qn = Hf(t => t.replace(yB, (e, r) => r ? r.toUpperCase() : "")),
-    xB = /\B([A-Z])/g,
+    xB = /\B([A-Z/u2E80-/u9FFF])/g,
     zs = Hf(t => t.replace(xB, "-$1").toLowerCase()),
     Wf = Hf(t => t.charAt(0).toUpperCase() + t.slice(1)),
     Yh = Hf(t => t ? `on${Wf(t)}` : ""),
@@ -7800,7 +7800,7 @@ const Ba = class Ba {
         return this.htmlEscape(r).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z/u2E80-/u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
         return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -12083,9 +12083,9 @@ var Fv = {
                 parse: m
             },
             O = /[\n\r\t]/g,
-            N = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+            N = /^[A-Z/u2E80-/u9FFFa-z][A-Z/u2E80-/u9FFFa-z0-9+-.]*:\/\//,
             $ = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
-            A = /^[a-zA-Z]:/,
+            A = /^[a-zA-Z/u2E80-/u9FFF]:/,
             M = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/;
 
         function H(L) {
@@ -18083,7 +18083,7 @@ Of.exports;
             pA = "\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf",
             EA = "\\u2000-\\u206f",
             dA = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",
-            C_ = "A-Z\\xc0-\\xd6\\xd8-\\xde",
+            C_ = "A-Z/u2E80-/u9FFF\\xc0-\\xd6\\xd8-\\xde",
             L_ = "\\ufe0e\\ufe0f",
             A_ = hA + pA + EA + dA,
             kc = "['’]",
@@ -18108,7 +18108,7 @@ Of.exports;
             K_ = mA + "?",
             k_ = "[" + L_ + "]?",
             vA = "(?:" + P_ + "(?:" + [U_, Vc, Gc].join("|") + ")" + k_ + K_ + ")*",
-            yA = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])",
+            yA = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z/u2E80-/u9FFF_])",
             xA = "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])",
             M_ = k_ + K_ + vA,
             bA = "(?:" + [gA, Vc, Gc].join("|") + ")" + M_,
@@ -18118,7 +18118,7 @@ Of.exports;
             Fc = RegExp(Mc + "(?=" + Mc + ")|" + RA + M_, "g"),
             LA = RegExp([la + "?" + w_ + "+" + $_ + "(?=" + [O_, la, "$"].join("|") + ")", TA + "+" + D_ + "(?=" + [O_, la + B_, "$"].join("|") + ")", la + "?" + B_ + "+" + $_, la + "+" + D_, xA, yA, I_, bA].join("|"), "g"),
             AA = RegExp("[" + P_ + Ul + b_ + L_ + "]"),
-            OA = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
+            OA = /[a-z][A-Z/u2E80-/u9FFF]|[A-Z/u2E80-/u9FFF]{2}[a-z]|[0-9][a-zA-Z/u2E80-/u9FFF]|[a-zA-Z/u2E80-/u9FFF][0-9]|[^a-zA-Z/u2E80-/u9FFF0-9 ]/,
             IA = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"],
             wA = -1,
             Pt = {};
@@ -24899,7 +24899,7 @@ var ki = e_,
                 return new ki.Token(ki.Token.Type.startTag, r, n, e[0])
             }
             return new ki.Token(ki.Token.Type.endTag, e[1].substr(1, e[1].length - 1))
-        }, t.nameChars = "[a-zA-Z0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z0-9\\.\\-_:;#/\\s]", t
+        }, t.nameChars = "[a-zA-Z/u2E80-/u9FFF0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z/u2E80-/u9FFF0-9\\.\\-_:;#/\\s]", t
     }();
 Cc.Tokenizer = UJ;
 (function(t) {
@@ -29708,7 +29708,7 @@ function nd(t, e, r) {
     };
     return r != null && (n.source = r), n
 }
-const Boe = /\{([0-9a-zA-Z]+)\}/g;
+const Boe = /\{([0-9a-zA-Z/u2E80-/u9FFF]+)\}/g;
 
 function $oe(t, ...e) {
     return e.length === 1 && Doe(e[0]) && (e = e[0]), (!e || !e.hasOwnProperty) && (e = {}), t.replace(Boe, (r, n) => e.hasOwnProperty(n) ? e[n] : "")

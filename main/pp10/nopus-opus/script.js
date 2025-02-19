@@ -73,7 +73,7 @@ const rn = {},
     },
     tF = /-(\w)/g,
     Ai = Im(t => t.replace(tF, (e, n) => n ? n.toUpperCase() : "")),
-    nF = /\B([A-Z])/g,
+    nF = /\B([A-Z/u2E80-/u9FFF])/g,
     xc = Im(t => t.replace(nF, "-$1").toLowerCase()),
     Nm = Im(t => t.charAt(0).toUpperCase() + t.slice(1)),
     Q_ = Im(t => t ? `on${Nm(t)}` : ""),
@@ -7678,7 +7678,7 @@ let js = (Wo = class {
         return this.htmlEscape(n).trim()
     }
     static sanitizeName(e) {
-        return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+        return e.replace(/[^A-Z/u2E80-/u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
     }
     static sanitizeInput(e) {
         return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -11833,7 +11833,7 @@ var vS = {
                 stringify: d,
                 parse: p
             },
-            v = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+            v = /^[A-Z/u2E80-/u9FFFa-z][A-Z/u2E80-/u9FFFa-z0-9+-.]*:\/\//,
             y = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
             g = "[\\x09\\x0A\\x0B\\x0C\\x0D\\x20\\xA0\\u1680\\u180E\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200A\\u202F\\u205F\\u3000\\u2028\\u2029\\uFEFF]",
             b = new RegExp("^" + g + "+");
@@ -14302,7 +14302,7 @@ m1.exports;
             HN = "\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf",
             YN = "\\u2000-\\u206f",
             zN = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",
-            d5 = "A-Z\\xc0-\\xd6\\xd8-\\xde",
+            d5 = "A-Z/u2E80-/u9FFF\\xc0-\\xd6\\xd8-\\xde",
             p5 = "\\ufe0e\\ufe0f",
             m5 = WN + HN + YN + zN,
             Gg = "['’]",
@@ -14327,7 +14327,7 @@ m1.exports;
             A5 = XN + "?",
             O5 = "[" + p5 + "]?",
             JN = "(?:" + E5 + "(?:" + [b5, jg, Wg].join("|") + ")" + O5 + A5 + ")*",
-            ex = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])",
+            ex = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z/u2E80-/u9FFF_])",
             tx = "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])",
             C5 = O5 + A5 + JN,
             nx = "(?:" + [ZN, jg, Wg].join("|") + ")" + C5,
@@ -14337,7 +14337,7 @@ m1.exports;
             Hg = RegExp(Vg + "(?=" + Vg + ")|" + rx + C5, "g"),
             ox = RegExp([Vc + "?" + y5 + "+" + S5 + "(?=" + [g5, Vc, "$"].join("|") + ")", QN + "+" + w5 + "(?=" + [g5, Vc + T5, "$"].join("|") + ")", Vc + "?" + T5 + "+" + S5, Vc + "+" + w5, tx, ex, _5, nx].join("|"), "g"),
             ax = RegExp("[" + E5 + fd + u5 + p5 + "]"),
-            cx = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
+            cx = /[a-z][A-Z/u2E80-/u9FFF]|[A-Z/u2E80-/u9FFF]{2}[a-z]|[0-9][a-zA-Z/u2E80-/u9FFF]|[a-zA-Z/u2E80-/u9FFF][0-9]|[^a-zA-Z/u2E80-/u9FFF0-9 ]/,
             lx = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"],
             ux = -1,
             tn = {};
@@ -20593,7 +20593,7 @@ var $o = R3,
                 return new $o.Token($o.Token.Type.startTag, n, r, e[0])
             }
             return new $o.Token($o.Token.Type.endTag, e[1].substr(1, e[1].length - 1))
-        }, t.nameChars = "[a-zA-Z0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z0-9\\.\\-_:;#/\\s]", t
+        }, t.nameChars = "[a-zA-Z/u2E80-/u9FFF0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z/u2E80-/u9FFF0-9\\.\\-_:;#/\\s]", t
     }();
 cg.Tokenizer = Koe;
 (function(t) {
@@ -48708,7 +48708,7 @@ var u8, Zo, Bl, t5, hc, h8, k9e = function() {
     ql = Math.PI / 180,
     cl = Math.atan2,
     f8 = 1e8,
-    tN = /([A-Z])/g,
+    tN = /([A-Z/u2E80-/u9FFF])/g,
     I9e = /(?:left|right|width|margin|padding|x)/i,
     N9e = /[\s,\(]\S/,
     Xo = {

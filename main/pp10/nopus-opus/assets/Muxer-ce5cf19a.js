@@ -225,7 +225,7 @@ const Se = new Error("failed to get response body reader"),
     }),
     j = async e => {
         let t;
-        if (typeof e == "string") /data:_data\/([a-zA-Z]*);base64,([^"]*)/.test(e) ? t = atob(e.split(",")[1]).split("").map(r => r.charCodeAt(0)) : t = await (await fetch(e)).arrayBuffer();
+        if (typeof e == "string") /data:_data\/([a-zA-Z/u2E80-/u9FFF]*);base64,([^"]*)/.test(e) ? t = atob(e.split(",")[1]).split("").map(r => r.charCodeAt(0)) : t = await (await fetch(e)).arrayBuffer();
         else if (e instanceof URL) t = await (await fetch(e)).arrayBuffer();
         else if (e instanceof File || e instanceof Blob) t = await Ae(e);
         else return new Uint8Array;

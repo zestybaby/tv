@@ -5547,7 +5547,7 @@ var Pge = PA((Tme, t7) => {
             this.initialized && (r === "true" && n === null && (n = !1), this.updateSwiperOnPropChange(e, n))
         }
         static get observedAttributes() {
-            return Qu.filter(r => r.includes("_")).map(r => r.replace(/[A-Z]/g, n => `-${n}`).replace("_", "").toLowerCase())
+            return Qu.filter(r => r.includes("_")).map(r => r.replace(/[A-Z/u2E80-/u9FFF]/g, n => `-${n}`).replace("_", "").toLowerCase())
         }
     }
     Qu.forEach(t => {
@@ -5629,7 +5629,7 @@ var Pge = PA((Tme, t7) => {
         },
         G$ = /-(\w)/g,
         Qn = rf(t => t.replace(G$, (e, r) => r ? r.toUpperCase() : "")),
-        F$ = /\B([A-Z])/g,
+        F$ = /\B([A-Z/u2E80-/u9FFF])/g,
         Js = rf(t => t.replace(F$, "-$1").toLowerCase()),
         nf = rf(t => t.charAt(0).toUpperCase() + t.slice(1)),
         hp = rf(t => t ? `on${nf(t)}` : ""),
@@ -13598,7 +13598,7 @@ var Pge = PA((Tme, t7) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(e) {
-            return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return e.replace(/[^A-Z/u2E80-/u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static sanitizeInput(e) {
             return e = e.replace("…", "..."), e.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -17755,7 +17755,7 @@ ${r}`
                     stringify: h,
                     parse: g
                 },
-                y = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+                y = /^[A-Z/u2E80-/u9FFFa-z][A-Z/u2E80-/u9FFFa-z0-9+-.]*:\/\//,
                 _ = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
                 E = "[\\x09\\x0A\\x0B\\x0C\\x0D\\x20\\xA0\\u1680\\u180E\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200A\\u202F\\u205F\\u3000\\u2028\\u2029\\uFEFF]",
                 b = new RegExp("^" + E + "+");
@@ -18998,7 +18998,7 @@ ${r.message}`,
             return e.replace("…", "...").replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF\u2019]/gi, "")
         }
         static username(e) {
-            return e.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
+            return e.replace(/[^A-Z/u2E80-/u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "’")
         }
         static emoji(e) {
             return e.replace(/(\u00A9|\u00AE|[\u2000-\u2017]|[\u2020-\u3300]|\uD83C[\uD000-\uDFFF]|\uD83D[\uD000-\uDFFF]|\uD83E[\uD000-\uDFFF])/, "")
@@ -20249,7 +20249,7 @@ ${r.message}`,
                 $7 = "\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf",
                 x7 = "\\u2000-\\u206f",
                 R7 = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",
-                jg = "A-Z\\xc0-\\xd6\\xd8-\\xde",
+                jg = "A-Z/u2E80-/u9FFF\\xc0-\\xd6\\xd8-\\xde",
                 Hg = "\\ufe0e\\ufe0f",
                 zg = C7 + $7 + x7 + R7,
                 Zf = "['’]",
@@ -20274,7 +20274,7 @@ ${r.message}`,
                 tm = P7 + "?",
                 rm = "[" + Hg + "]?",
                 D7 = "(?:" + Jg + "(?:" + [Xg, ed, td].join("|") + ")" + rm + tm + ")*",
-                M7 = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])",
+                M7 = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z/u2E80-/u9FFF_])",
                 U7 = "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])",
                 nm = rm + tm + D7,
                 B7 = "(?:" + [N7, ed, td].join("|") + ")" + nm,
@@ -20284,7 +20284,7 @@ ${r.message}`,
                 rd = RegExp(Qf + "(?=" + Qf + ")|" + G7 + nm, "g"),
                 j7 = RegExp([ta + "?" + Yg + "+" + Qg + "(?=" + [Wg, ta, "$"].join("|") + ")", k7 + "+" + em + "(?=" + [Wg, ta + Zg, "$"].join("|") + ")", ta + "?" + Zg + "+" + Qg, ta + "+" + em, U7, M7, Vg, B7].join("|"), "g"),
                 H7 = RegExp("[" + Jg + jl + Gg + Hg + "]"),
-                z7 = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
+                z7 = /[a-z][A-Z/u2E80-/u9FFF]|[A-Z/u2E80-/u9FFF]{2}[a-z]|[0-9][a-zA-Z/u2E80-/u9FFF]|[a-zA-Z/u2E80-/u9FFF][0-9]|[^a-zA-Z/u2E80-/u9FFF0-9 ]/,
                 W7 = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"],
                 V7 = -1,
                 Nt = {};
@@ -27044,7 +27044,7 @@ function print() { __p += __j.call(arguments, '') }
                     return new Bi.Token(Bi.Token.Type.startTag, r, n, e[0])
                 }
                 return new Bi.Token(Bi.Token.Type.endTag, e[1].substr(1, e[1].length - 1))
-            }, t.nameChars = "[a-zA-Z0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z0-9\\.\\-_:;#/\\s]", t
+            }, t.nameChars = "[a-zA-Z/u2E80-/u9FFF0-9\\.\\-_:;/]", t.valueChars = "[a-zA-Z/u2E80-/u9FFF0-9\\.\\-_:;#/\\s]", t
         }();
     Uf.Tokenizer = uQ;
     (function(t) {

@@ -161,7 +161,7 @@ var Wae = KR((qae, fO) => {
         },
         tL = /-(\w)/g,
         Fn = zu(e => e.replace(tL, (t, r) => r ? r.toUpperCase() : "")),
-        rL = /\B([A-Z])/g,
+        rL = /\B([A-Z/u2E80-/u9FFF])/g,
         Rs = zu(e => e.replace(rL, "-$1").toLowerCase()),
         Xu = zu(e => e.charAt(0).toUpperCase() + e.slice(1)),
         lu = zu(e => e ? `on${Xu(e)}` : ""),
@@ -1543,7 +1543,7 @@ var Wae = KR((qae, fO) => {
 
     function hP(e, t) {
         const r = {};
-        for (const n in e) r[t && /[A-Z]/.test(n) ? `on:${n}` : lu(n)] = e[n];
+        for (const n in e) r[t && /[A-Z/u2E80-/u9FFF]/.test(n) ? `on:${n}` : lu(n)] = e[n];
         return r
     }
     const sh = e => e ? gT(e) ? ll(e) || e.proxy : sh(e.parent) : null,
@@ -7097,7 +7097,7 @@ var Wae = KR((qae, fO) => {
             return this.htmlEscape(r).trim()
         }
         static sanitizeName(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+            return t.replace(/[^A-Z/u2E80-/u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
         }
         static sanitizeInput(t) {
             return t = t.replace("\u2026", "..."), t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
@@ -11378,7 +11378,7 @@ ${r}`,
                     stringify: _,
                     parse: y
                 },
-                $ = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//,
+                $ = /^[A-Z/u2E80-/u9FFFa-z][A-Z/u2E80-/u9FFFa-z0-9+-.]*:\/\//,
                 x = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i,
                 D = "[\\x09\\x0A\\x0B\\x0C\\x0D\\x20\\xA0\\u1680\\u180E\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200A\\u202F\\u205F\\u3000\\u2028\\u2029\\uFEFF]",
                 I = new RegExp("^" + D + "+");
@@ -12758,7 +12758,7 @@ ${r.message}`,
             return t.replace(/[^\u00A1\u0020-\u007E\u00BF-\u00FF’]/gi, "")
         }
         static username(t) {
-            return t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
+            return t.replace(/[^A-Z/u2E80-/u9FFF0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u2026!?*$+\-'_ .,]/gi, "").replace(/'/g, "\u2019")
         }
         static emoji(t) {
             return t.replace(/(\u00a9|\u00ae|[\u2000-\u2017]|[\u2020-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/, "")
@@ -13835,7 +13835,7 @@ ${r.message}`,
                 FO = "\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf",
                 BO = "\\u2000-\\u206f",
                 jO = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000",
-                am = "A-Z\\xc0-\\xd6\\xd8-\\xde",
+                am = "A-Z/u2E80-/u9FFF\\xc0-\\xd6\\xd8-\\xde",
                 om = "\\ufe0e\\ufe0f",
                 cm = UO + FO + BO + jO,
                 Hl = "['\u2019]",
@@ -13860,7 +13860,7 @@ ${r.message}`,
                 _m = KO + "?",
                 ym = "[" + om + "]?",
                 HO = "(?:" + pm + "(?:" + [hm, Yl, zl].join("|") + ")" + ym + _m + ")*",
-                VO = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])",
+                VO = "\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z/u2E80-/u9FFF_])",
                 YO = "\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])",
                 bm = ym + _m + HO,
                 zO = "(?:" + [WO, Yl, zl].join("|") + ")" + bm,
@@ -13870,7 +13870,7 @@ ${r.message}`,
                 Xl = RegExp(Vl + "(?=" + Vl + ")|" + XO + bm, "g"),
                 QO = RegExp([Ds + "?" + fm + "+" + mm + "(?=" + [um, Ds, "$"].join("|") + ")", qO + "+" + vm + "(?=" + [um, Ds + gm, "$"].join("|") + ")", Ds + "?" + gm + "+" + mm, Ds + "+" + vm, YO, VO, lm, zO].join("|"), "g"),
                 eI = RegExp("[" + pm + nc + nm + om + "]"),
-                tI = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/,
+                tI = /[a-z][A-Z/u2E80-/u9FFF]|[A-Z/u2E80-/u9FFF]{2}[a-z]|[0-9][a-zA-Z/u2E80-/u9FFF]|[a-zA-Z/u2E80-/u9FFF][0-9]|[^a-zA-Z/u2E80-/u9FFF0-9 ]/,
                 rI = ["Array", "Buffer", "DataView", "Date", "Error", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Math", "Object", "Promise", "RegExp", "Set", "String", "Symbol", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "WeakMap", "_", "clearTimeout", "isFinite", "parseInt", "setTimeout"],
                 nI = -1,
                 At = {};
@@ -20131,7 +20131,7 @@ function print() { __p += __j.call(arguments, '') }
                     return new yi.Token(yi.Token.Type.startTag, r, n, t[0])
                 }
                 return new yi.Token(yi.Token.Type.endTag, t[1].substr(1, t[1].length - 1))
-            }, e.nameChars = "[a-zA-Z0-9\\.\\-_:;/]", e.valueChars = "[a-zA-Z0-9\\.\\-_:;#/\\s]", e
+            }, e.nameChars = "[a-zA-Z/u2E80-/u9FFF0-9\\.\\-_:;/]", e.valueChars = "[a-zA-Z/u2E80-/u9FFF0-9\\.\\-_:;#/\\s]", e
         }();
     Pl.Tokenizer = t7;
     (function(e) {
