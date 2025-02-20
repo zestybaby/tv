@@ -23151,28 +23151,28 @@ const GR = `<div id="controller" class="state-controller controller-content">
             formattedActiveContentId: null,
             isLocal: !1,
             strings: {
-                wait: "Sit back and relax!",
-                vip_waiting: "Waiting for all players to join",
-                vip_canStart: "Press this button when everybody has joined",
-                vip_cancel: "Press this button to cancel game start",
-                vip_postgame: "What would you like to do now?",
-                vip_episodes_menu: "Episodes Menu",
-                vip_episodes_unload: "Unload Episode",
-                vip_episodes_report: "Report Episode",
-                vip_episodes_warning: "Warning: user generated content is not rated",
-                vip_episodes_load: "Load an episode by id:",
-                vip_episodes_select: "Or select an episode:",
-                vip_episodes_back: "Back",
-                vip_episodes_submit: "SUBMIT",
-                vip_episodes_view_author: "View Author",
-                button_start: "Everybody's In",
-                button_cancel: "Cancel",
-                button_changename: "Change Name",
-                button_sameplayers: "Same Players",
-                button_newplayers: "New Players",
-                prompt_entername: "Enter your name",
-                prompt_choosecharacter: "Select your character",
-                button_censorOptions: "Censor Options",
+                wait: "先等一小会！",
+                vip_waiting: "等待所有玩家加入",
+                vip_canStart: "当所有人都加入后按下按钮",
+                vip_cancel: "按下按钮取消游戏开始",
+                vip_postgame: "现在你想做什么？",
+                vip_episodes_menu: "剧集菜单",
+                vip_episodes_unload: "取消载入剧集",
+                vip_episodes_report: "举报剧集",
+                vip_episodes_warning: "警告：用户生成的内容未评级",
+                vip_episodes_load: "通过ID载入剧集：",
+                vip_episodes_select: "或者选择一个剧集：",
+                vip_episodes_back: "返回",
+                vip_episodes_submit: "提交",
+                vip_episodes_view_author: "查看作者",
+                button_start: "所有人都准备好了",
+                button_cancel: "取消",
+                button_changename: "更改名称",
+                button_sameplayers: "相同玩家",
+                button_newplayers: "新玩家",
+                prompt_entername: "输入你的名字",
+                prompt_choosecharacter: "选择你的角色",
+                button_censorOptions: "审查选项",
                 censor_prompt: ""
             }
         }
@@ -23732,10 +23732,10 @@ const GR = `<div id="controller" class="state-controller controller-content">
             announcePrompt: !1,
             countGroupName: null,
             strings: {
-                your_choice: "Thank you. Your choice: ",
-                censor_prompt: "Censor this?",
-                censor_confirm: "Yes, Censor!",
-                censor_cancel: "No!"
+                your_choice: "谢谢你。你的选择是：",
+                censor_prompt: "审查这个？",
+                censor_confirm: "是的，审查！",
+                censor_cancel: "不！"
             }
         }
     }),
@@ -25344,10 +25344,10 @@ const Cw = `<div id="controller" class="state-controller controller-content">\r
             doneText: {},
             announcePrompt: !1,
             strings: {
-                your_choice: "Thank you. Your choice: ",
-                censor_prompt: "Censor this?",
-                censor_confirm: "Yes, Censor!",
-                censor_cancel: "No!"
+                your_choice: "谢谢你。你的选择是：",
+                censor_prompt: "审查这个？",
+                censor_confirm: "是的，审查！",
+                censor_cancel: "不！"
             }
         }
     }),
