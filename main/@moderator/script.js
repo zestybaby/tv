@@ -18420,83 +18420,83 @@ class MF {
     }
 }
 const kF = {
-        BACK: "Back",
-        CANCEL: "Cancel",
-        CLOSE: "Close",
-        CONFIRM: "Confirm",
-        CREATE: "Create",
-        DELETE: "Delete",
-        DONE: "Done",
-        EDIT: "Edit",
-        OK: "OK",
-        NEXT: "Next",
-        NO: "No",
-        PLAY: "Play",
-        PUBLISH: "Publish",
-        REMOVE: "Remove",
-        RESET: "Reset",
-        SUBMIT: "Submit",
-        TRY_AGAIN: "Try Again",
-        UNDO: "Undo",
-        YES: "Yes"
+        BACK: "返回",
+        CANCEL: "取消",
+        CLOSE: "关闭",
+        CONFIRM: "确认",
+        CREATE: "创建",
+        DELETE: "删除",
+        DONE: "完成",
+        EDIT: "编辑",
+        OK: "确定",
+        NEXT: "下一步",
+        NO: "否",
+        PLAY: "游玩",
+        PUBLISH: "发布",
+        REMOVE: "删除",
+        RESET: "重置",
+        SUBMIT: "提交",
+        TRY_AGAIN: "重试",
+        UNDO: "撤销",
+        YES: "是"
     },
     GF = {
         UGC: {
-            VISIBILITY_CONTROLLER_OFF: "prompts hidden on players’ devices",
-            VISIBILITY_CONTROLLER_ON: "prompts shown on players’ devices",
-            VISIBILITY_SCREEN_OFF: "prompts hidden on game screen",
-            VISIBILITY_SCREEN_ON: "prompts shown on game screen"
+            VISIBILITY_CONTROLLER_OFF: "提示隐藏在玩家设备上",
+            VISIBILITY_CONTROLLER_ON: "提示显示在玩家设备上",
+            VISIBILITY_SCREEN_OFF: "提示隐藏在游戏屏幕上",
+            VISIBILITY_SCREEN_ON: "提示显示在游戏屏幕上"
         }
     },
     VF = {
-        DISCONNECTED: "You have been disconnected.",
-        DRAWING_NOTHING: "You have to draw something!",
-        PLAYER_KICKED: "You have been kicked from the game by a moderator.",
-        ROOM_DESTROYED: "Thanks for playing!",
-        ROOM_DISCONNECTED: "Disconnected",
-        TEXT_NAUGHTY: "I’m afraid you can’t write that. Please be respectful of other players.",
-        TEXT_NOTHING: "You can’t enter nothing!",
-        TITLE: "Error"
+        DISCONNECTED: "你已被断开连接。",
+        DRAWING_NOTHING: "你必须画些东西！",
+        PLAYER_KICKED: "你已被房管踢出游戏。",
+        ROOM_DESTROYED: "感谢游玩！",
+        ROOM_DISCONNECTED: "断开连接",
+        TEXT_NAUGHTY: "恐怕你不能写这个。请尊重其他玩家。",
+        TEXT_NOTHING: "你不能什么都不写！",
+        TITLE: "错误"
     },
-    FF = "LOADING",
+    FF = "加载中",
     WF = {
-        JOINED_COUNT: "{count} of {maxPlayers} players joined",
-        PLAYERS_NEEDED: "1 player needed to start | {count} players needed to start",
-        WAITING_FOR_VIP: "Waiting for {name} to start the game",
-        WAITING_FOR_GAMEPAD: "Waiting for the game to start",
-        WAITING_FOR_NEW_GAME: "Waiting for a new game to start",
-        GAME_STARTING: "Game is starting",
-        BUTTON_START: "Press to Start",
-        BUTTON_CANCEL: "Press to Cancel"
+        JOINED_COUNT: "已加入{count}/{maxPlayers}名玩家",
+        PLAYERS_NEEDED: "需要1名玩家开始游戏 | 需要{count}名玩家开始游戏",
+        WAITING_FOR_VIP: "正在等{name}开始游戏",
+        WAITING_FOR_GAMEPAD: "正在等游戏开始",
+        WAITING_FOR_NEW_GAME: "正在等新游戏开始",
+        GAME_STARTING: "游戏正在开始",
+        BUTTON_START: "按下以开始",
+        BUTTON_CANCEL: "按下以取消"
     },
     HF = {
-        GALLERY_LINK: "Visit the Gallery",
-        NEW_GAME_STARTED: "A new game has started",
-        PLAY_AGAIN: "Play again?",
-        THANKS_FOR_PLAYING: "Thanks for playing!",
-        BUTTON_GO_TO_GAME: "Go to game",
-        BUTTON_GO_TO_JACKBOX: "Back to jackbox.tv",
-        BUTTON_SAME_PLAYERS: "Same players",
-        BUTTON_NEW_PLAYERS: "New players"
+        GALLERY_LINK: "访问画廊",
+        NEW_GAME_STARTED: "新游戏开始了",
+        PLAY_AGAIN: "再玩一次？",
+        THANKS_FOR_PLAYING: "感谢游玩！",
+        BUTTON_GO_TO_GAME: "前往游戏",
+        BUTTON_GO_TO_JACKBOX: "返回jackbox.tv",
+        BUTTON_SAME_PLAYERS: "相同玩家",
+        BUTTON_NEW_PLAYERS: "新玩家"
     },
     jF = {
-        AND: "AND",
-        OR: "OR"
+        AND: "和",
+        OR: "或"
     },
     XF = {
-        BUTTON_SKIP: "Skip",
-        BUTTON_NEXT: "Next",
-        BUTTON_DONE: "Let’s Go!"
+        BUTTON_SKIP: "跳过",
+        BUTTON_NEXT: "下一步",
+        BUTTON_DONE: "让我们开始吧！"
     },
     qF = {
-        NAME: "AUDIENCE"
+        NAME: "观众"
     },
     YF = {
         CART: {
-            CHECK_OUT: "Check out",
-            EMPTY: "Your cart is empty",
-            TITLE: "Shopping Cart",
-            TOTAL: "Total"
+            CHECK_OUT: "结账",
+            EMPTY: "你的购物车是空的",
+            TITLE: "购物车",
+            TOTAL: "总计"
         }
     },
     zF = {
